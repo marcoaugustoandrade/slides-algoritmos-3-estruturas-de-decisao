@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>3 - Estruturas de decisão</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/portugol-studio-dark.css">
+
+		<!-- Custom -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/site.webmanifest">
+		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#2980B9">
+		<meta name="msapplication-TileColor" content="#2980B9">
+		<meta name="theme-color" content="#2980B9">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Lógica de Programação</h1>
+					<h2>Estruturas de decisão</h2>
+					<p>Prof. Marco Antonio Andrade</p>
+				</section>
+				<section class="left">
+					<h2>Sumário</h2>
+					<ul>
+						<li>Se</li>
+						<li>Se... senão</li>
+						<li>Se... senão se</li>
+						<li>Escolha caso</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Se</h2>
+					<pre><code class="hljs portugol" code data-trim data-noescape>
+	se (<mark>condição_for_verdadeira</mark>)
+	{
+		Faça alguma coisa!
+	}
+					</code></pre>
+					<div class="alert-yellow fragment fade-up">Pode ser uma expressão aritmética, relacional, lógica ou uma combinação dessas expressões.</div>
+				</section>
+				<section>
+					<h2>Se</h2>
+					<pre><code class="hljs portugol" data-trim contenteditable>
+	inteiro x = 5
+	se (x > 0)
+	{
+		escreva("O número é positivo!")
+	}
+					</code></pre>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Exercícios
+						* Escreva um algoritmo que leia um número inteiro informado pelo
+						usuário e informe se este número é negativo.
+						* Escreva um algoritmo que leia a idade e o sexo de um trabalhador
+						informados pelo usuário e, em seguida, caso o sexo seja feminino e
+						sua idade seja maior ou igual a 60 anos ou sua idade seja maior ou
+						igual a 65 anos, informe que o(a) trabalhador está em condições de se
+						aposentar. <!-- .element: class="fragment" data-fragment-index="1" -->
+					</textarea>
+				</section>
+				<section>
+						<h2>Se... senão</h2>
+						<pre><code class="hljs portugol" data-trim data-noescape contenteditable>
+	se (<mark>condição_for_verdadeira</mark>)
+	{
+		Faça alguma coisa!
+	}
+	senao
+	{
+		Faça alguma coisa!
+	}								
+						</code></pre>
+					</section>				
+				<section>
+					<h2>Se... senão</h2>
+					<pre><code class="hljs portugol" data-trim contenteditable>
+	inteiro idade = 18
+	se (idade >= 18)
+	{
+		escreva("É maior de idade")
+	}
+	senao
+	{
+		escreva("É menor de idade")
+	}
+					</code></pre>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Exercícios
+						* Escreva um algoritmo que leia 2 notas de uma aluno do IFRO e informe se o mesmo está aprovado ou reprovado na disciplina, considerando que para aprovação a nota tem que ser maior ou igual a 6.
+						* Escreva um algoritmo que receba uma letra informada pelo usuário e
+						informe se essa letra é uma vogal ou uma consoante. <!-- .element: class="fragment" data-fragment-index="1" -->
+					</textarea>
+				</section>				
+				<section>
+					<h2>Se.. senão se</h2>
+					<pre><code class="hljs portugol" data-trim data-noescape contenteditable>
+	se (<mark>condição_for_verdadeira_e_atender_criterio</mark>)
+	{
+		Faça alguma coisa!
+	}
+	senao se (<mark>condição_for_verdadeira_e_atender_criterio</mark>)
+	{
+		Faça alguma coisa!
+	}
+	senao (<mark>condição_for_falsa</mark>)
+	{
+		Faça alguma coisa!
+	}
+					</code></pre>
+					<div class="alert-yellow fragment fade-up">Ou seja, podemos ter várias condições verdadeiras, no qual, cada uma atende a determinado critério.</div>
+				</section>
+				<section>
+					<h2>Se.. senão se</h2>
+					<pre><code class="hljs portugol" data-trim contenteditable>
+	real nota = 7
+	se (nota > 9)
+	{
+		escreva("O desempenho do aluno foi excelente!")
+	}
+	senao se (nota > 6 e nota < 9)
+	{
+		escreva("O desempenho do aluno foi satisfatório!")
+	}
+	senao
+	{
+		escreva("O desempenho do aluno foi insatisfatório!")
+	}
+					</code></pre>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Exercícios
+						* Escreva um algoritmo que leia um número informado pelo usuário e
+						informe se o número é positivo, negativo ou zero.
+						* (PUGA & RISSETI, 2016) Escreva um algoritmo que receba os valores
+						correspondentes aos lados de um triângulo e, em seguida, classifiqueos:
+						equilátero (três lados iguais), isósceles (dois lados iguais) ou
+						escaleno (três lados diferentes). <!-- .element: class="fragment" data-fragment-index="1" -->
+					</textarea>
+				</section>
+				<section>
+					<h2>Escolha caso</h2>
+					<pre><code class="hljs portugol" data-trim data-noescape contenteditable>
+	escolha (<mark>variável</mark>)
+	{
+		caso <mark>opção_1</mark>:
+			Faça alguma coisa!
+		pare
+		caso <mark>opção_2</mark>:
+			Faça alguma coisa!
+		pare
+		caso <mark>opção_3</mark>:
+			Faça alguma coisa!
+		pare
+		caso contrario:
+			Faça alguma coisa!
+		pare
+	}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Escolha caso</h2>
+					<pre><code class="hljs portugol" data-trim data-noescape contenteditable>
+	caracter operacao
+	escolha (operacao)
+	{
+		caso '+':
+			escreva(num1 + num2)
+		pare
+		caso '-':
+			escreva(num1 – num2)
+		pare
+		caso contrario:
+			escreva("Opção inválida!")
+		pare
+	}
+					</code></pre>
+					<div class="alert-blue fragment fade-up">A operação escolha espera que a variável seja do tipo <b>inteiro</b> ou <b>caracter</b>.</div>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Exercícios
+						* Escreva um algoritmo classifique uma nota informada pelo aluno, de
+						0 a 5, em conceitos, da seguinte forma:
+							* Conceito A: 5
+							* Conceito B: 4
+							* Conceito C: 3
+							* Conceito D: 2
+							* Conceito E: 1
+					</textarea>
+				</section>									
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			var role = getParameterByName('role');
+			role = role === 'master' ? role : 'client';
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: false, // centraliza os slides
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				slideNumber: false,
+				width: "100%",
+				height: "100%",
+				margin: 0.1,
+				minScale: 1,
+				maxScale: 1,
+				/*
+				multiplex: {
+					secret: null,
+					id: null,
+					url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
+				},*/
+				dependencies: [
+					{ src: 'lib/js/socket.io.min.js', async: true },
+          			{ src: 'plugin/multiplex/' + role + '.js', async: true },
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
